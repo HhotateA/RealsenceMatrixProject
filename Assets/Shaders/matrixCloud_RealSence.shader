@@ -85,8 +85,8 @@
                 [unroll]for(int index=0;index<4;index++) {
                     output.offset = offset[index];
                     output.vertex = mul( UNITY_MATRIX_P, mul(UNITY_MATRIX_MV,input[0].vertex) + _size*offset[index]); //パーティクル化
-                    output.noise = float3(  rand(float4(wpos+_noiseSpeed2*_Time.y*1e-06,10.0)),
-                                            rand(float4(wpos+_noiseSpeed2*_Time.y*1e-06,90.0)),
+                    output.noise = float3(  rand(float4(floor(wpos*100)+_noiseSpeed2*_Time.y*1e-06,10.0)),
+                                            rand(float4(floor(wpos*100)+_noiseSpeed2*_Time.y*1e-06,90.0)),
                                             perlinNoise((wpos*_noiseScale + _Time.y*_noiseSpeed.xyz),_Time.y*_noiseSpeed.z));
                     output.color = input[0].color;
                     outStream.Append(output);
