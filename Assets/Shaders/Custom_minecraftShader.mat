@@ -49,6 +49,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _pointRate: 1
-    - _size: 0.027
+    - _size: 0.065
     m_Colors:
     - _col: {r: 1, g: 1, b: 1, a: 1}
