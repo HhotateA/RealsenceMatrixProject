@@ -18,9 +18,6 @@ public class RsPointCloudRenderer : MonoBehaviour
     [NonSerialized]
     private Vector3[] vertices;
 
-    [SerializeField] private int _pointRate;
-
-
     FrameQueue q;
 
     void Start()
@@ -41,8 +38,6 @@ public class RsPointCloudRenderer : MonoBehaviour
 
     private void ResetMesh(int width, int height)
     {
-        width /= _pointRate;
-        height /= _pointRate;
         Assert.IsTrue(SystemInfo.SupportsTextureFormat(TextureFormat.RGFloat));
         uvmap = new Texture2D(width, height, TextureFormat.RGFloat, false, true)
         {
